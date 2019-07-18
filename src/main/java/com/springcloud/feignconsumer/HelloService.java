@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
  * Date:   2019/7/17
  * Description:
  */
-@FeignClient("hello-service")
+//@FeignClient(value = "hello-service",configuration = DisableHystrixConfiguration.class)
+@FeignClient(name = "hello-service",fallback = HelloServiceFallBack.class)
 public interface HelloService {
 
     @RequestMapping("/hello")
