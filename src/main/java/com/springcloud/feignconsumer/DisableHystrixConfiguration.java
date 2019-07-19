@@ -9,6 +9,10 @@ import org.springframework.context.annotation.Scope;
  * Date:   2019/7/18
  * Description:
  */
+
+/**
+ * 加了注解@Configuration 即使@FeignClient(value = "hello-service",configuration = DisableHystrixConfiguration.class)不加configuration = DisableHystrixConfiguration.class 也会读取该配置
+ */
 //@Configuration
 public class DisableHystrixConfiguration {
 
