@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class CousumerController {
     @Autowired
     HelloService helloService;
-    @Autowired
-    RefactorHelloService refactorHelloService;
+//    @Autowired
+//    RefactorHelloService refactorHelloService;
 
     @RequestMapping(value = "/feign-consumer",method = RequestMethod.GET)
     public String helloConsumer(){
@@ -32,12 +32,12 @@ public class CousumerController {
         return sb.toString();
     }
 
-    @RequestMapping(value = "/feign-consumer3",method = RequestMethod.GET)
-    public String helloConsumer3(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(refactorHelloService.hello("mimi")).append("\n");
-        sb.append(refactorHelloService.hello("mimi",30)).append("\n");
-        sb.append(refactorHelloService.hello(new com.springcloud.helloserviceapi.dto.User("mimi",30))).append("\n");
-        return sb.toString();
-    }
+//    @RequestMapping(value = "/feign-consumer3",method = RequestMethod.GET)
+//    public String helloConsumer3(){
+//        StringBuilder sb = new StringBuilder();
+//        sb.append(refactorHelloService.hello("mimi")).append("\n");
+//        sb.append(refactorHelloService.hello("mimi",30)).append("\n");
+//        sb.append(refactorHelloService.hello(new com.springcloud.helloserviceapi.dto.User("mimi",30))).append("\n");
+//        return sb.toString();
+//    }
 }
